@@ -2,10 +2,12 @@ x=80
 y=80
 xrett1=0
 xrett2=0
+## Prof.: il nome delle variabili seguenti è fuorviante
 altezzarett2=0
 altezzarett1=375
 versx=1
 versy=1
+## Prof.: questa variabile è dichiarata ma non usata
 raggio=50
 punti1=0
 punti2=0
@@ -21,10 +23,14 @@ def draw():
     x=x+(3*versx)
     y=y+(3*versy)
     #Se la pallina tocca la prima racchetta 
+## Prof.: utilizza variabili al posto di numeri cablati nel codice
+
     if y>=altezzarett1-(20/2) and (x+(20/2)>xrett1 and x-(20/2)<xrett1+80): 
         #Cambieremo il verso della pallina
         versy*=-1
          #Se la pallina tocca la seconda racchetta 
+## Prof.: spiegherei questo calcolo
+
     if y<=altezzarett2+35 and (x+(20/2)>xrett2 and x-(20/2)<xrett2+80):
        #Cambieremo il verso della pallina
        versy*=-1
@@ -42,6 +48,8 @@ def draw():
         xrett2=xrett2-50
     if xrett1>=width-50:
         xrett1=xrett1-50
+## Prof.: questi if provocano un fastidioso rimbalzo delle racchette sui bordi
+
     if xrett1<0:
         xrett1*=-1
     if xrett2<0:
@@ -56,6 +64,7 @@ def draw():
          fill(0,0,0)
          text("vince giocatore 2", 100,200)
          delay(1000)
+## Prof.: non serve ribadire sempre lo stesso fill
 
     fill (0)
     textSize ( 30 )
@@ -77,6 +86,8 @@ def keyPressed():
         xrett1=xrett1-25
     if keyCode == RIGHT:
         xrett1=xrett1+25
+## Prof.: per i tasti lettera puoi usare la variabile key e confrontarla con il carattere (es. if key=="c"...)
+
     if keyCode == 65:
         xrett2=xrett2-25
     if keyCode == 83:
